@@ -28,6 +28,7 @@ class AForm {
         const int gradeToExecute;
         
     public:
+        AForm();
         AForm(const std::string& name, int gradeToSign, int grade);
         AForm(const AForm& copied);
         AForm& operator=(const AForm& copied);
@@ -39,7 +40,7 @@ class AForm {
     int getGradeToExecute() const;
     
     void beSigned(const Bureaucrat& b);
-    virtual void execute(Bureaucrat const & executor) const = 0;
+    void execute(const Bureaucrat& executor) const;
     virtual void executeAction() const = 0;
     
     class GradeTooHighException : public std::exception {
