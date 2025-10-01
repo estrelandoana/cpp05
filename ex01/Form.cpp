@@ -13,6 +13,8 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
+Form::Form() : name("Default"), isSigned(false), gradeToSign(150), gradeToExecute(150) {}
+
 Form::Form(const std::string& name, int gradeToSign, int grade) : name(name), isSigned(false), gradeToSign(gradeToSign), gradeToExecute(grade) {
     if(gradeToSign < 1 || grade < 1)
         throw Form::GradeTooHighException();

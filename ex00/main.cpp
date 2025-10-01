@@ -13,6 +13,7 @@
 #include "Bureaucrat.hpp"
 
 int main() {
+    std::cout << "===== Teste de construção válida e increment/decrement =====" << std::endl;
     try {
         Bureaucrat a("Ana", 2);
         Bureaucrat b("Luke", 149);
@@ -22,7 +23,7 @@ int main() {
 
         a.incrementGrade();
         std::cout << a << std::endl;
-        
+
         try {
             a.incrementGrade();
         } catch (std::exception& e) {
@@ -32,9 +33,28 @@ int main() {
         b.decrementGrade();
         std::cout << b << std::endl;
 
-        b.decrementGrade();
+        try {
+            b.decrementGrade();
+        } catch (std::exception& e) {
+            std::cerr << "Exception: " << e.what() << std::endl;
+        }
     } catch (std::exception& e) {
-        std::cerr << "Exception in constructor: " << e.what() << std::endl;
+        std::cerr << "Exception em construtor válido: " << e.what() << std::endl;
     }
+
+    std::cout << "\n===== Teste de construção com nota inválida (0) =====" << std::endl;
+    try {
+        Bureaucrat c("Zero", 0);
+    } catch (std::exception& e) {
+        std::cerr << "Exception: " << e.what() << std::endl;
+    }
+
+    std::cout << "\n===== Teste de construção com nota inválida (151) =====" << std::endl;
+    try {
+        Bureaucrat d("CentoCinquentaEUm", 151);
+    } catch (std::exception& e) {
+        std::cerr << "Exception: " << e.what() << std::endl;
+    }
+
     return 0;
 }

@@ -12,20 +12,21 @@
 
 #include "RobotomyRequestForm.hpp"
 
+RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45), target("default") {
+    std::srand(std::time(0));
+}
 RobotomyRequestForm::RobotomyRequestForm(const std::string& target) : AForm("RobotomyRequestForm", 72, 45), target(target) {
     std::srand(std::time(0));
 }
-
-RobotomyRequestForm::~RobotomyRequestForm() {}
-
-void RobotomyRequestForm::execute(Bureaucrat const & executor) const {
-    if (!getIsSign())
-        throw AForm::FormNotSignedException();
-    if (executor.getGrade() > getGradeToExecute())
-        throw AForm::GradeTooLowException();
-    executeAction();
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other) : AForm(other), target(other.target) {}
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& other) {
+    if (this != &other) {
+        AForm::operator=(other);
+        target = other.target;
+    }
+    return *this;
 }
-
+RobotomyRequestForm::~RobotomyRequestForm() {}
 void RobotomyRequestForm::executeAction() const {
     std::cout << "Drilling noises... ";
     if (std::rand() % 2)

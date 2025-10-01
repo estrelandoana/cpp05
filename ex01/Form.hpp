@@ -28,6 +28,7 @@ class Form {
         const int gradeToExecute;
         
     public:
+        Form();
         Form(const std::string& name, int gradeToSign, int grade);
         Form(const Form& copied);
         Form& operator=(const Form& copied);

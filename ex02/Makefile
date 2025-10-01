@@ -36,6 +36,7 @@ clean:
 
 fclean: clean
 	$(RM) $(NAME)
+	$(RM) home_shrubbery
 
 re: fclean all
 
