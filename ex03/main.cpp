@@ -18,7 +18,7 @@
 #include "Intern.hpp"
 
 int main() {
-    std::cout << "===== Teste: Bureaucrat com permissão suficiente =====" << std::endl;
+    std::cout << "===== Test: Bureaucrat with sufficient permission =====" << std::endl;
     Bureaucrat ana("Ana", 1);
     ShrubberyCreationForm shrubbery("home");
     RobotomyRequestForm robotomy("Bender");
@@ -32,17 +32,17 @@ int main() {
     ana.signForm(pardon);
     ana.executeForm(pardon);
 
-    std::cout << "\n===== Teste: Bureaucrat com graduação insuficiente para assinar =====" << std::endl;
+    std::cout << "\n===== Test: Bureaucrat with insufficient grade to sign =====" << std::endl;
     Bureaucrat low("Low", 150);
     ShrubberyCreationForm shrubbery2("garden");
     low.signForm(shrubbery2);
 
-    std::cout << "\n===== Teste: Bureaucrat tentando executar form não assinado =====" << std::endl;
+    std::cout << "\n===== Test: Bureaucrat trying to execute unsigned form =====" << std::endl;
     Bureaucrat mid("Mid", 50);
     RobotomyRequestForm robotomy2("R2D2");
     mid.executeForm(robotomy2);
 
-    std::cout << "\n===== Teste: Bureaucrat consegue assinar mas não executar =====" << std::endl;
+    std::cout << "\n===== Test: Bureaucrat can sign but not execute =====" << std::endl;
     Bureaucrat signOnly("Signer", 72);
     RobotomyRequestForm robotomy3("C3PO");
     signOnly.signForm(robotomy3);

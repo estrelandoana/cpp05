@@ -13,7 +13,7 @@
 #include "Bureaucrat.hpp"
 
 int main() {
-    std::cout << "===== Teste de construção válida e increment/decrement =====" << std::endl;
+    std::cout << "===== Valid construction and increment/decrement test =====" << std::endl;
     try {
         Bureaucrat a("Ana", 2);
         Bureaucrat b("Luke", 149);
@@ -39,17 +39,17 @@ int main() {
             std::cerr << "Exception: " << e.what() << std::endl;
         }
     } catch (std::exception& e) {
-        std::cerr << "Exception em construtor válido: " << e.what() << std::endl;
+    std::cerr << "Exception in valid constructor: " << e.what() << std::endl;
     }
 
-    std::cout << "\n===== Teste de construção com nota inválida (0) =====" << std::endl;
+    std::cout << "\n===== Construction test with invalid grade (0) =====" << std::endl;
     try {
         Bureaucrat c("Zero", 0);
     } catch (std::exception& e) {
         std::cerr << "Exception: " << e.what() << std::endl;
     }
 
-    std::cout << "\n===== Teste de construção com nota inválida (151) =====" << std::endl;
+    std::cout << "\n===== Construction test with invalid grade (151) =====" << std::endl;
     try {
         Bureaucrat d("CentoCinquentaEUm", 151);
     } catch (std::exception& e) {
