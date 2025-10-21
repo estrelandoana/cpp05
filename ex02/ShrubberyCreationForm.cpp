@@ -3,20 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: apaula-l <apaula-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/19 01:04:58 by codespace         #+#    #+#             */
-/*   Updated: 2025/09/19 02:35:54 by codespace        ###   ########.fr       */
+/*   Created: 2025/09/19 01:04:58 by apaula-l          #+#    #+#             */
+/*   Updated: 2025/10/21 20:10:37 by apaula-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <fstream>
+#include <iostream>
 #include "ShrubberyCreationForm.hpp"
 
 
 ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137), target("default") {}
+
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target) : AForm("ShrubberyCreationForm", 145, 137), target(target) {}
+
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other) : AForm(other), target(other.target) {}
+
 ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationForm& other) {
     if (this != &other) {
         AForm::operator=(other);
@@ -24,9 +28,44 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
     }
     return *this;
 }
+
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
+
 void ShrubberyCreationForm::executeAction() const {
+    std::string asciiTree = "_________________¶¶¶¶¶¶¶¶\n"
+                           "_______________¶¶¶¶¶¶¶¶¶¶¶¶¶¶\n"
+                           "_________________¶¶¶¶¶¶¶¶¶¶____¶¶¶¶¶¶¶¶¶\n"
+                           "_________________¶¶¶¶¶¶¶¶¶__¶¶¶¶¶¶¶¶¶¶¶¶¶¶\n"
+                           "_______¶¶¶¶¶¶¶____¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶\n"
+                           "____¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶\n"
+                           "__¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶___________¶¶¶\n"
+                           "¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶______________¶¶\n"
+                           "¶¶¶¶¶¶¶¶¶______¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶\n"
+                           "___________¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶\n"
+                           "_______¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶__¶¶¶¶¶_______¶¶¶¶¶¶¶¶¶¶¶¶¶\n"
+                           "______¶¶¶¶¶¶¶¶¶¶¶________¶¶¶¶¶_________¶¶¶¶¶¶¶¶¶¶\n"
+                           "______¶¶¶¶¶¶¶¶¶__________¶¶¶¶¶¶_________¶¶¶¶¶¶¶¶¶\n"
+                           "______¶¶¶¶¶¶¶¶____________¶¶¶¶¶__________¶¶¶¶¶¶¶¶\n"
+                           "______¶¶¶¶¶¶______________¶¶¶¶¶¶__________¶¶¶¶¶¶¶\n"
+                           "______¶¶¶¶¶________________¶¶¶¶¶¶__________¶¶¶¶¶¶\n"
+                           "_______¶¶¶¶_________________¶¶¶¶¶¶__________¶¶¶¶¶\n"
+                           "_______¶¶__________________¶¶¶¶¶¶¶_________¶¶¶¶\n"
+                           "_______¶¶___________________¶¶¶¶¶¶¶_________¶¶\n"
+                           "_______¶____________________¶¶¶¶¶¶¶_________¶\n"
+                           "_____________________________¶¶¶¶¶¶\n"
+                           "_____________________________¶¶¶¶¶¶¶\n"
+                           "_____________________________¶¶¶¶¶¶¶\n"
+                           "___________________________¶¶¶¶¶¶¶¶¶¶\n"
+                           "________________________¶¶¶111¶¶¶¶¶¶¶\n"
+                           "_________________¶¶¶¶¶¶111111111¶¶¶¶¶¶¶\n"
+                           "_______________¶¶1111111111111111¶¶¶¶¶¶¶\n"
+                           "_____¶¶¶¶¶1111111111111¶1111¶¶¶¶¶¶¶1111¶¶¶\n"
+                           "__¶¶¶¶¶¶1111111111111111111¶¶11¶¶¶¶¶¶¶11¶¶¶¶\n"
+                           "¶¶1111111111111111111111110n¶¶¶¶¶¶¶¶¶¶¶¶¶¶\n"
+                           "11111111111111111111111111111¶¶¶¶¶¶¶¶¶¶¶¶¶¶\n";
+
     std::ofstream file((target + "_shrubbery").c_str());
-    file << "ASCII Trees!\n";
+    file << asciiTree;
     file.close();
+    std::cout << asciiTree << std::endl;
 }

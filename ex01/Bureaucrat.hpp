@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: apaula-l <apaula-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/06 17:48:33 by codespace         #+#    #+#             */
-/*   Updated: 2025/09/18 23:56:38 by codespace        ###   ########.fr       */
+/*   Created: 2025/09/06 17:48:33 by apaula-l          #+#    #+#             */
+/*   Updated: 2025/10/21 19:43:44 by apaula-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Bureaucrat {
     private:
         const std::string name;
         int grade;
-        
+
     public:
         Bureaucrat();
         Bureaucrat(const std::string& name, int grade);
@@ -34,7 +34,7 @@ class Bureaucrat {
         int getGrade() const;
         void incrementGrade();
         void decrementGrade();
-    void signForm(Form& form);
+        void signForm(Form& form);
 
         class GradeTooHighException : public std::exception {
             public:

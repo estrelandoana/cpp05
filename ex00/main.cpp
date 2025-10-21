@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: apaula-l <apaula-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/14 22:55:39 by codespace         #+#    #+#             */
-/*   Updated: 2025/09/14 23:03:38 by codespace        ###   ########.fr       */
+/*   Created: 2025/09/14 22:55:39 by apaula-l          #+#    #+#             */
+/*   Updated: 2025/10/21 19:34:36 by apaula-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
 int main() {
-    std::cout << "===== Valid construction and increment/decrement test =====" << std::endl;
+    std::cout << "Valid construction and increment/decrement" << std::endl;
     try {
         Bureaucrat a("Ana", 2);
         Bureaucrat b("Luke", 149);
@@ -42,14 +42,14 @@ int main() {
     std::cerr << "Exception in valid constructor: " << e.what() << std::endl;
     }
 
-    std::cout << "\n===== Construction test with invalid grade (0) =====" << std::endl;
+    std::cout << "\nInvalid grade (0)" << std::endl;
     try {
         Bureaucrat c("Zero", 0);
     } catch (std::exception& e) {
         std::cerr << "Exception: " << e.what() << std::endl;
     }
 
-    std::cout << "\n===== Construction test with invalid grade (151) =====" << std::endl;
+    std::cout << "\nInvalid grade (151)" << std::endl;
     try {
         Bureaucrat d("CentoCinquentaEUm", 151);
     } catch (std::exception& e) {

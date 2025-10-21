@@ -3,33 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: apaula-l <apaula-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/14 21:52:10 by codespace         #+#    #+#             */
-/*   Updated: 2025/09/19 02:08:07 by codespace        ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "Bureaucrat.hpp"
-#include "AForm.hpp"
-
-void Bureaucrat::executeForm(AForm const & form) const {
-    try {
-        form.execute(*this);
-        std::cout << this->getName() << " executed " << form.getName() << std::endl;
-    } catch (std::exception &e) {
-        std::cout << this->getName() << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
-    }
-}
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/14 21:52:10 by codespace         #+#    #+#             */
-/*   Updated: 2025/09/19 02:08:07 by codespace        ###   ########.fr       */
+/*   Created: 2025/09/14 21:52:10 by apaula-l          #+#    #+#             */
+/*   Updated: 2025/10/21 20:11:46 by apaula-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +60,15 @@ void Bureaucrat::signForm(AForm& aform) {
     } catch(std::exception& e) {
         std::cout << this->getName() << " couldn't sign "
                     << aform.getName() << " because " << e.what() << std::endl;
+    }
+}
+
+void Bureaucrat::executeForm(AForm const & form) const {
+    try {
+        form.execute(*this);
+        std::cout << this->getName() << " executed " << form.getName() << std::endl;
+    } catch (std::exception &e) {
+        std::cout << this->getName() << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
     }
 }
 

@@ -3,18 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: apaula-l <apaula-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/19 01:29:40 by codespace         #+#    #+#             */
-/*   Updated: 2025/09/19 02:29:26 by codespace        ###   ########.fr       */
+/*   Created: 2025/09/19 01:29:40 by apaula-l          #+#    #+#             */
+/*   Updated: 2025/10/21 19:26:35 by apaula-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm", 25, 5), target("default") {}
+
 PresidentialPardonForm::PresidentialPardonForm(const std::string& target) : AForm("PresidentialPardonForm", 25, 5), target(target) {}
+
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& other) : AForm(other), target(other.target) {}
+
 PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& other) {
     if (this != &other) {
         AForm::operator=(other);
@@ -22,7 +25,9 @@ PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPard
     }
     return *this;
 }
+
 PresidentialPardonForm::~PresidentialPardonForm() {}
+
 void PresidentialPardonForm::executeAction() const {
     std::cout << target << " has been pardoned by Zaphod Beeblebrox." << std::endl;
 }

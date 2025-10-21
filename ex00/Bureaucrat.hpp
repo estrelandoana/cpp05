@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: apaula-l <apaula-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/06 17:48:33 by codespace         #+#    #+#             */
-/*   Updated: 2025/09/14 23:08:30 by codespace        ###   ########.fr       */
+/*   Created: 2025/09/06 17:48:33 by apaula-l          #+#    #+#             */
+/*   Updated: 2025/10/21 19:43:03 by apaula-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Bureaucrat {
     private:
         const std::string name;
         int grade;
-        
+
     public:
         Bureaucrat();
         Bureaucrat(const std::string& name, int grade);

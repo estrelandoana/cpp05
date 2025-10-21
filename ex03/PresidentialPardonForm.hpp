@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: apaula-l <apaula-l@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/19 01:27:39 by codespace         #+#    #+#             */
-/*   Updated: 2025/09/19 02:29:21 by codespace        ###   ########.fr       */
+/*   Created: 2025/09/19 01:27:39 by apaula-l         #+#    #+#             */
+/*   Updated: 2025/09/19 02:29:21 by apaula-l        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@
 class PresidentialPardonForm : public AForm {
     private:
         std::string target;
+
     public:
         PresidentialPardonForm();
         PresidentialPardonForm(const std::string& target);
         PresidentialPardonForm(const PresidentialPardonForm& other);
         PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
         virtual ~PresidentialPardonForm();
+
         virtual void executeAction() const;
 };
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: apaula-l <apaula-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/18 22:35:41 by codespace         #+#    #+#             */
-/*   Updated: 2025/09/19 00:58:11 by codespace        ###   ########.fr       */
+/*   Created: 2025/09/18 22:35:41 by apaula-l          #+#    #+#             */
+/*   Updated: 2025/10/21 19:40:09 by apaula-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 
 AForm::AForm() : name("Default"), isSigned(false), gradeToSign(150), gradeToExecute(150) {}
+
 AForm::AForm(const std::string& name, int gradeToSign, int grade) : name(name), isSigned(false), gradeToSign(gradeToSign), gradeToExecute(grade) {
     if(gradeToSign < 1 || grade < 1)
         throw AForm::GradeTooHighException();

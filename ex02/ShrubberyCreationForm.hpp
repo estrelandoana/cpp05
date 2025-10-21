@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: apaula-l <apaula-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/19 01:00:06 by codespace         #+#    #+#             */
-/*   Updated: 2025/09/19 02:29:25 by codespace        ###   ########.fr       */
+/*   Created: 2025/09/19 01:00:06 by apaula-l          #+#    #+#             */
+/*   Updated: 2025/10/21 20:16:20 by apaula-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,14 @@
 class ShrubberyCreationForm : public AForm {
     private:
         std::string target;
+
     public:
         ShrubberyCreationForm();
         ShrubberyCreationForm(const std::string& target);
         ShrubberyCreationForm(const ShrubberyCreationForm& other);
         ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
         virtual ~ShrubberyCreationForm();
+
         virtual void executeAction() const;
 };
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: apaula-l <apaula-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/28 22:07:23 by codespace         #+#    #+#             */
-/*   Updated: 2025/09/28 22:24:52 by codespace        ###   ########.fr       */
+/*   Created: 2025/09/28 22:07:23 by apaula-l          #+#    #+#             */
+/*   Updated: 2025/10/21 19:32:08 by apaula-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,11 @@ Intern::~Intern() {}
 static AForm* createShrubbery(const std::string& target) {
     return new ShrubberyCreationForm(target);
 }
+
 static AForm* createRobotomy(const std::string& target) {
     return new RobotomyRequestForm(target);
 }
+
 static AForm* createPresidential(const std::string& target) {
     return new PresidentialPardonForm(target);
 }

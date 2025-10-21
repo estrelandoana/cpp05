@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: codespace <codespace@student.42.fr>        +#+  +:+       +#+        */
+/*   By: apaula-l <apaula-l@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/19 01:14:51 by codespace         #+#    #+#             */
-/*   Updated: 2025/09/19 02:29:27 by codespace        ###   ########.fr       */
+/*   Created: 2025/09/19 01:14:51 by apaula-l          #+#    #+#             */
+/*   Updated: 2025/10/21 19:27:14 by apaula-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,13 @@
 RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45), target("default") {
     std::srand(std::time(0));
 }
+
 RobotomyRequestForm::RobotomyRequestForm(const std::string& target) : AForm("RobotomyRequestForm", 72, 45), target(target) {
     std::srand(std::time(0));
 }
+
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other) : AForm(other), target(other.target) {}
+
 RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& other) {
     if (this != &other) {
         AForm::operator=(other);
@@ -26,7 +29,9 @@ RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& o
     }
     return *this;
 }
+
 RobotomyRequestForm::~RobotomyRequestForm() {}
+
 void RobotomyRequestForm::executeAction() const {
     std::cout << "Drilling noises... ";
     if (std::rand() % 2)
